@@ -9,6 +9,16 @@ angular.module('myApp.search', ['ngRoute'])
   });
 }])
 
-.controller('searchCtrl', [function() {
+.controller('searchCtrl', ['$scope', '$http', function($scope, $http) {
+$scope.searchType = 'artist';
+    $scope.search=function(){
+        var url = 'https://api.spotify.com/v1/search?q=' + $scope.searchValue + '&type='+$scope.searchType;
+        $http.get(url).then(processResponse);
+
+    }
+
+    var processResponse = function(response){
+        $scope.searchResults = response.data;
+    }
 
 }]);

@@ -1,12 +1,16 @@
 
-<p> Spot(ify) Lite </p>
+<p> Spotify Lite </p>
 
-<input> </input>
+<input type="text" data-ng-model="searchValue"> </input>
 
-<button> Search </button>
+<button ng-click="search()"> Search </button>
 
-<br> <br> <input type="radio" name="Artists"> Artists
-<input type="radio" name="Albums">  Albums
-<input type="radio" name="Songs"> Songs
-<input type="radio" name="Playlists"> Playlists
+<br> <br> <input type="radio" name="searchType" data-ng-model="searchType" value = "song"/> Songs
+<input type="radio" name="searchType" data-ng-model="searchType" value = "artist"/> Artists
+<input type="radio" name="searchType" data-ng-model="searchType" value = "album"/>  Albums
+<input type="radio" name="searchType" data-ng-model="searchType" value = "playlist"/> Playlists
+
+
+
+<div id= "results" ng-repeat="searchResult in searchResults.artists.items">{{searchResult.name}}<img src={{searchResult.images[0].url}} /></div>
 

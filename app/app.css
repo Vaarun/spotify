@@ -28,3 +28,8 @@
   content: "";
   padding: 0;
 }
+div#results img{
+max-width:200px;
+height:auto;
+width:auto;
+}
