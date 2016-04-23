@@ -1,20 +1,24 @@
 <div id="all">
-<input type="text" data-ng-model="searchValue"> </input>
+    <form>
+        <input type="text" data-ng-model="searchValue"> </input>
 
-<button ng-click="search()"> Search </button>
+        <input type="submit" value="Search" ng-click="search()">  </input>
+    </form>
+    <br> <br> <input type="radio" name="searchType" data-ng-model="searchType" value="track"/> Songs
+    <input type="radio" name="searchType" data-ng-model="searchType" value="artist"/> Artists
+    <input type="radio" name="searchType" data-ng-model="searchType" value="album"/> Albums
+    <input type="radio" name="searchType" data-ng-model="searchType" value="playlist"/> Playlists
 
-<br> <br> <input type="radio" name="searchType" data-ng-model="searchType" value = "track"/> Songs
-<input type="radio" name="searchType" data-ng-model="searchType" value = "artist"/> Artists
-<input type="radio" name="searchType" data-ng-model="searchType" value = "album"/>  Albums
-<input type="radio" name="searchType" data-ng-model="searchType" value = "playlist"/> Playlists
 
+    <div id="artistsResults" ng-repeat="searchResult in searchResults.artists.items">{{searchResult.name}} <br> <img
+            src={{searchResult.images[0].url}}/></div>
 
+    <div id="albumsResults" ng-repeat="searchResult in searchResults.albums.items">{{searchResult.name}} <br> <img
+            src={{searchResult.images[0].url}}/></div>
 
-<div id= "artistsResults" ng-repeat="searchResult in searchResults.artists.items">{{searchResult.name}} <br> <img src={{searchResult.images[0].url}} /></div>
+    <div id="songsResults" ng-repeat="searchResult in searchResults.tracks.items">{{searchResult.name}} <br> <img
+            src={{searchResult.album.images[0].url}}/><a href="{{searchResult.preview_url}}">song</a></div>
 
-<div id= "albumsResults" ng-repeat="searchResult in searchResults.albums.items">{{searchResult.name}} <br> <img src={{searchResult.images[0].url}} /></div>
-
-<div id= "songsResults" ng-repeat="searchResult in searchResults.tracks.items">{{searchResult.name}} <br> <img src={{searchResult.album.images[0].url}} /></div>
-
-<div id= "playlistResults" ng-repeat="searchResult in searchResults.playlists.items">{{searchResult.name}} <br> <img src={{searchResult.images[0].url}} /></div>
+    <div id="playlistResults" ng-repeat="searchResult in searchResults.playlists.items">{{searchResult.name}} <br> <img
+            src={{searchResult.images[0].url}}/></div>
 </div>
