@@ -28,8 +28,41 @@
   content: "";
   padding: 0;
 }
-div#results img{
+
+div#artistsResults img{
+max-width:400px;
+height:auto;
+width:auto;
+}
+
+div#albumsResults img{
+max-width:400px;
+height:auto;
+width:auto;
+}
+
+div#songsResults img{
+max-width:400px;
+height:auto;
+width:auto;
+}
+
+div#playlistsResults img{
+max-width:400px;
+height:auto;
+width:auto;
+}
+
+div#title img{
 max-width:200px;
 height:auto;
 width:auto;
+}
+
+div#title {
+text-align: center
+}
+
+div#all{
+text-align: center
 }
