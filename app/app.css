@@ -66,3 +66,19 @@ text-align: center
 div#all{
 text-align: center
 }
+
+div#playlistResults {
+font-size: 3em
+}
+
+div#songsResults {
+font-size: 3em
+}
+
+div#albumsResults {
+font-size: 3em
+}
+
+div#artistsResults {
+font-size: 3em
+}
